@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(240, 240, 240);
+    color: #333;
+}
+
+@font-face {
+    font-family: pokeFont;
+    src: url(./font/pokemon_solid.ttf);
+}
+
+.pokeTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: pokeFont;
+    letter-spacing: 3px;
+    font-size: 250%;
+    line-height: 50%;
+    opacity: 0.6;
+    color: #7c5454;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+.contenitor {
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    max-width: 70%;
+}
+
+#searchBar {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2%;
+    display: block;
+    width: 30%;
+    height: 40px;
+    color: rgb(25, 25, 25);
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.02), 0 16px 32px rgba(0, 0, 0, 0.02), 0 32px 64px rgba(0, 0, 0, 0.02);
+}
+
+#nPoke {
+    text-align: center;
+    font-family: "Roboto", arial, sans-serif;
+}
+
+.results {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.results .cont {
+    display: block;
+}
+
+.results li {
+    background-size: 150% 150%;
+    -webkit-animation: AnimationBG 6s ease infinite;
+    -moz-animation: AnimationBG 6s ease infinite;
+    animation: AnimationBG 6s ease infinite;
+    width: 200px;
+    border-radius: 15px;
+    display: inline-block;
+    min-width: 5em;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.02), 0 16px 32px rgba(0, 0, 0, 0.02), 0 32px 64px rgba(0, 0, 0, 0.02);
+    transition: 200ms linear;
+}
+
+.results li figure {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    width: auto;
+    margin: 20px;
+}
+
+.results li figure img {
+    width: 100%;
+    -webkit-filter: drop-shadow(2px 3px 5px #7a7a79);
+    filter: drop-shadow(2px 3px 5px #7a7a79);
+    transition: 300ms;
+}
+
+li:hover figure img {
+    transform: scale(1.05);
+}
+
+.results li .pokemon-info {
+    clear: both;
+}
+
+.results li .pokemon-info .id {
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: bold;
+    color: #919191;
+    font-size: 80%;
+    padding-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results li .pokemon-info h5 {
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: bold;
+    font-size: 145%;
+    margin-bottom: 5px;
+    margin-top: -5px;
+    color: #666;
+    mix-blend-mode: color-burn;
+    z-index: 3;
+}
+
+.results li .pokemon-info .id .type {
+    width: 15px;
+    mix-blend-mode: overlay;
+    filter: invert(100%);
+    margin-left: 15px
+}
+
+.normal {
+    background: radial-gradient(circle, rgba(139, 137, 137, 0.12) 31%, rgba(213, 211, 211, 0.12) 100%);
+}
+
+.normal:hover {
+    background: radial-gradient(circle, rgba(139, 137, 137, 0.2) 31%, rgba(213, 211, 211, 0.2) 100%);
+}
+
+.grass {
+    background: radial-gradient(circle, rgba(9, 121, 12, 0.12) 31%, rgba(0, 255, 38, 0.12) 100%);
+}
+
+.grass:hover {
+    background: radial-gradient(circle, rgba(9, 121, 12, 0.2) 31%, rgba(0, 255, 38, 0.2) 100%);
+}
+
+.fire {
+    background: radial-gradient(circle, rgba(255, 175, 0, 0.12) 31%, rgba(255, 33, 33, 0.12) 100%);
+}
+
+.fire:hover {
+    background: radial-gradient(circle, rgba(255, 175, 0, 0.2) 31%, rgba(255, 33, 33, 0.2) 100%);
+}
+
+.water {
+    background: radial-gradient(circle, rgba(12, 59, 158, 0.12) 31%, rgba(0, 185, 255, 0.12) 100%);
+}
+
+.water:hover {
+    background: radial-gradient(circle, rgba(12, 59, 158, 0.2) 31%, rgba(0, 185, 255, 0.2) 100%);
+}
+
+.psychic {
+    background: radial-gradient(circle, rgba(137, 12, 158, 0.18) 31%, rgba(255, 0, 194, 0.18) 100%);
+}
+
+.psychic:hover {
+    background: radial-gradient(circle, rgba(137, 12, 158, 0.26) 31%, rgba(255, 0, 194, 0.26) 100%);
+}
+
+.electric {
+    background: radial-gradient(circle, rgba(236, 221, 0, 0.18) 31%, rgba(130, 88, 2, 0.18) 100%);
+}
+
+.electric:hover {
+    background: radial-gradient(circle, rgba(236, 221, 0, 0.26) 31%, rgba(130, 88, 2, 0.26) 100%);
+}
+
+.ice {
+    background: radial-gradient(circle, rgba(138, 241, 255, 0.12) 31%, rgba(0, 146, 189, 0.12) 100%);
+}
+
+.ice:hover {
+    background: radial-gradient(circle, rgba(138, 241, 255, 0.2) 31%, rgba(0, 146, 189, 0.2) 100%);
+}
+
+.fighting {
+    background: radial-gradient(circle, rgba(214, 82, 82, 0.12) 31%, rgba(78, 1, 1, 0.12) 100%);
+}
+
+.fighting:hover {
+    background: radial-gradient(circle, rgba(214, 82, 82, 0.2) 31%, rgba(78, 1, 1, 0.2) 100%);
+}
+
+.poison {
+    background: radial-gradient(circle, rgba(191, 0, 255, 0.12) 31%, rgba(32, 4, 83, 0.12) 100%);
+}
+
+.poison:hover {
+    background: radial-gradient(circle, rgba(191, 0, 255, 0.2) 31%, rgba(32, 4, 83, 0.2) 100%);
+}
+
+.ground {
+    background: radial-gradient(circle, rgba(147, 100, 0, 0.18) 31%, rgba(83, 58, 4, 0.18) 100%);
+}
+
+.ground:hover {
+    background: radial-gradient(circle, rgba(147, 100, 0, 0.26) 31%, rgba(83, 58, 4, 0.26) 100%);
+}
+
+.dark {
+    background: radial-gradient(circle, rgba(2, 2, 102, 0.12) 31%, rgba(0, 0, 0, 0.12) 100%);
+}
+
+.dark:hover {
+    background: radial-gradient(circle, rgba(2, 2, 102, 0.2) 31%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.steel {
+    background: radial-gradient(circle, rgba(88, 88, 88, 0.12) 31%, rgba(3, 3, 3, 0.12) 100%);
+}
+
+.steel:hover {
+    background: radial-gradient(circle, rgba(88, 88, 88, 0.2) 31%, rgba(3, 3, 3, 0.2) 100%);
+}
+
+.bug {
+    background: radial-gradient(circle, rgba(120, 150, 79, 0.18) 31%, rgba(179, 165, 36, 0.18) 100%);
+}
+
+.bug:hover {
+    background: radial-gradient(circle, rgba(120, 150, 79, 0.26) 31%, rgba(179, 165, 36, 0.26) 100%);
+}
+
+.flying {
+    background: radial-gradient(circle, rgba(79, 116, 150, 0.12) 31%, rgba(36, 125, 179, 0.12) 100%);
+}
+
+.flying:hover {
+    background: radial-gradient(circle, rgba(79, 116, 150, 0.2) 31%, rgba(36, 125, 179, 0.2) 100%);
+}
+
+.fairy {
+    background: radial-gradient(circle, rgba(140, 19, 148, 0.12) 31%, rgba(250, 47, 194, 0.12) 100%);
+}
+
+.fairy:hover {
+    background: radial-gradient(circle, rgba(140, 19, 148, 0.2) 31%, rgba(250, 47, 194, 0.2) 100%);
+}
+
+.rock {
+    background: radial-gradient(circle, rgba(143, 119, 8, 0.12) 31%, rgba(110, 110, 110, 0.12) 100%);
+}
+
+.rock:hover {
+    background: radial-gradient(circle, rgba(143, 119, 8, 0.2) 31%, rgba(110, 110, 110, 0.2) 100%);
+}
+
+.dragon {
+    background: radial-gradient(circle, rgba(92, 8, 143, 0.12) 31%, rgba(180, 73, 73, 0.12) 100%);
+}
+
+.dragon:hover {
+    background: radial-gradient(circle, rgba(92, 8, 143, 0.2) 31%, rgba(180, 73, 73, 0.2) 100%);
+}
+
+.ghost {
+    background: radial-gradient(circle, rgba(92, 8, 143, 0.12) 31%, rgba(73, 127, 180, 0.12) 100%);
+}
+
+.ghost:hover {
+    background: radial-gradient(circle, rgba(92, 8, 143, 0.2) 31%, rgba(73, 127, 180, 0.2) 100%);
+}
+
+@-webkit-keyframes AnimationBG {
+    0% {
+        background-position: 0% 0%
+    }
+    25% {
+        background-position: 100% 0%
+    }
+    50% {
+        background-position: 100% 100%
+    }
+    75% {
+        background-position: 0% 100%
+    }
+    100% {
+        background-position: 0% 0%
+    }
+}
+
+@-moz-keyframes AnimationBG {
+    0% {
+        background-position: 0% 0%
+    }
+    25% {
+        background-position: 100% 0%
+    }
+    50% {
+        background-position: 100% 100%
+    }
+    75% {
+        background-position: 0% 100%
+    }
+    100% {
+        background-position: 0% 0%
+    }
+}
+
+@keyframes AnimationBG {
+    0% {
+        background-position: 0% 0%
+    }
+    25% {
+        background-position: 100% 0%
+    }
+    50% {
+        background-position: 100% 100%
+    }
+    75% {
+        background-position: 0% 100%
+    }
+    100% {
+        background-position: 0% 0%
+    }
+}
+
+@media only screen and (max-width:1150px) {
+    .contenitor {
+        margin-top: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width:805px) {
+    #searchBar {
+        width: 70%;
+    }
+    #searchBar {
+        margin-bottom: 5%;
+    }
+    .results li {
+        width: 180px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 7px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 130%;
+    }
+}
+
+@media only screen and (min-width:656px) {
+    .pokeTitle {
+        font-size: 400%;
+    }
+}
+
+@media only screen and (max-width:655px) {
+    #searchBar {
+        width: 80%;
+    }
+    .contenitor {
+        margin-top: 8%;
+    }
+    .results li {
+        width: 120px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 7px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 120%;
+    }
+    .pokeTitle {
+        font-size: 350%;
+    }
+}
+
+@media only screen and (max-width:540px) {
+    #searchBar {
+        width: 90%;
+    }
+    .results li {
+        width: 90px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 5px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 100%;
+    }
+    .pokeTitle {
+        font-size: 300%;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    .results li {
+        width: 80px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 8px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 5px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 90%;
+    }
+}
+
+@media only screen and (max-width:280px) {
+    .pokeTitle {
+        font-size: 200%;
+    }
+}

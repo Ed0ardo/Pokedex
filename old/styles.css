@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(25, 25, 25);
+    color: #ffffff;
+}
+
+.contenitor {
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    max-width: 70%;
+}
+
+#searchBar {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2%;
+    display: block;
+    width: 30%;
+    height: 40px;
+    color: rgb(25, 25, 25);
+    border-radius: 20px;
+    border: 0px;
+}
+
+#nPoke {
+    text-align: center;
+    font-family: "Roboto", arial, sans-serif;
+}
+
+.results {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.results li {
+    background: #f5f5f5;
+    width: 200px;
+    border-radius: 15px;
+    display: inline-block;
+    min-width: 5em;
+    margin: 20px;
+    padding: 10px;
+    transition: 200ms linear;
+}
+
+.results li:hover {
+    transform: scale(1.1);
+}
+
+.results .cont {
+    display: block;
+}
+
+.results li figure {
+    background: #e8e8e8;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    width: auto;
+    margin: 20px;
+}
+
+.results li figure img {
+    width: 100%;
+}
+
+.results li .pokemon-info {
+    clear: both;
+}
+
+.results li .pokemon-info .id {
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: bold;
+    color: #919191;
+    font-size: 80%;
+    padding-top: 2px
+}
+
+.results li .pokemon-info h5 {
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: bold;
+    color: #313131;
+    text-transform: none;
+    font-size: 145%;
+    margin-bottom: 5px;
+    margin-top: -5px;
+}
+
+@media only screen and (max-width:1150px) {
+    .contenitor {
+        margin-top: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width:805px) {
+    #searchBar {
+        width: 70%;
+    }
+    #searchBar {
+        margin-bottom: 5%;
+    }
+    .results li {
+        width: 180px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 7px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 130%;
+    }
+}
+
+@media only screen and (max-width:655px) {
+    #searchBar {
+        width: 80%;
+    }
+    .contenitor {
+        margin-top: 8%;
+    }
+    .results li {
+        width: 120px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 7px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 120%;
+    }
+}
+
+@media only screen and (max-width:540px) {
+    #searchBar {
+        width: 90%;
+    }
+    .results li {
+        width: 90px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 5px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    .results li {
+        width: 80px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 8px;
+        padding: 5px;
+        transition: 200ms linear;
+    }
+    .results li figure {
+        margin: 5px;
+    }
+    .results li .pokemon-info h5 {
+        font-size: 90%;
+    }
+}
