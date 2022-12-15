@@ -11,6 +11,17 @@
         }
         return ($a < $b) ? -1 : 1;
     }
+
+    $servername = "0.0.0.0";
+    $username = "Ed0ardo";
+    $password = "XXX";
+    $dbname = "pokedex";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
