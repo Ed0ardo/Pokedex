@@ -1,6 +1,6 @@
 # Pokédex Online
 
-A simple pokédex connected to a database.
+A simple Pokédex connected to a database.
 ---
 
 #### Live Demo:
@@ -13,7 +13,7 @@ You can test the it on [THIS SITE](https://ed0.it/pokedex)!
 
 #### Features:
 
-- Cards colored according to the type of the pokémon
+- Cards colored according to the type of the Pokémon
 
 - Search bar (number and name)
 
@@ -25,7 +25,7 @@ You can test the it on [THIS SITE](https://ed0.it/pokedex)!
 
 ###### Note:
 
-The json of the updated pokédex can be found in this other repo of mine, together with the extractor:
+The json of the updated Pokédex can be found in this other repo of mine, together with the extractor:
 
 - [Pokédex JSON](https://github.com/Ed0ardo/PokedexJSON)
 
@@ -58,8 +58,8 @@ This site is connected to a Telegram bot that allows you to collect Pokémon, if
    
    ```sql
    CREATE TABLE `pokeball` (
-     `id` bigint(19) DEFAULT NULL,
-     `pokemon` varchar(5) DEFAULT NULL
+     `id` bigint(19) DEFAULT NOT NULL,
+     `pokemon` varchar(5) DEFAULT NOT NULL
    );
    ```
 
