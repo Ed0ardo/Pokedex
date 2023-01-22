@@ -69,7 +69,7 @@
                         $row = $r->fetch_all(MYSQLI_NUM);
                         usort($row, "cmp");
                         foreach($row as $num){
-                            $li = '<li onclick="openPokemon('.$num[0].');" class="'.strtolower($pokemon[$num[0]]["types"][0]).'">
+                            $li = '<li onclick="openPokemon(\''.$num[0].'\');" class="'.strtolower($pokemon[$num[0]]["types"][0]).'">
                                         <div class="cont">
                                             <figure>
                                                 <img src="'.$pokemon[$num[0]]["photo"].'">
